@@ -26,8 +26,8 @@ const Repeat = ({
 
   return (
     <div className="px-3">
-      <div className="form-group row">
-        <div className="col-sm-2 text-sm-right">
+      <div className="form-group row m-2">
+        <div className="col-sm-2 text-sm-end">
           <label
             htmlFor={`${id}-frequency`}
             className="col-form-label"

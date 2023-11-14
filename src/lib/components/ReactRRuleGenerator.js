@@ -73,7 +73,7 @@ class ReactRRuleGenerator extends PureComponent {
           )
         }
 
-        <div className="px-0 pt-3 border rounded">
+        <div className="px-0 pt-3">
 
           {
             !options.hideStart && (

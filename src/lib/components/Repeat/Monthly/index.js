@@ -22,7 +22,7 @@ const RepeatMonthly = ({
 
   return (
     <div>
-      <div className="form-group row d-flex align-items-sm-center">
+      <div className="form-group row m-2 d-flex align-items-sm-center">
         <div className="col-sm-1 offset-sm-2">
           {translateLabel(translations, 'repeat.monthly.every')}
         </div>
@@ -36,7 +36,7 @@ const RepeatMonthly = ({
             onChange={numericalFieldHandler(handleChange)}
           />
         </div>
-        <div className="col-sm-1">
+        <div className="col-sm-3">
           {translateLabel(translations, 'repeat.monthly.months')}
         </div>
       </div>
