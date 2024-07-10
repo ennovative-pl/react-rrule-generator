@@ -35,7 +35,10 @@ const EndOnDate = ({
             {...calendarAttributes}
             onChange={(event) => {
                 const d = new Date(event);
-                const v = `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`;
+                const year = d.getFullYear();
+                const month = String(d.getMonth() + 1).padStart(2, '0');
+                const day = String(d.getDate()).padStart(2, '0');
+                const v = `${year}-${month}-${day}`;
               const editedEvent = {
                 target: {
                   value: v,
