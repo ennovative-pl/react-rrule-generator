@@ -14,7 +14,7 @@ const EndOnDate = ({
     options,
   },
   handleChange,
-  translations
+  translations,
 }) => {
   const CustomCalendar = options.calendarComponent;
 
@@ -23,8 +23,7 @@ const EndOnDate = ({
     'aria-label': translateLabel(translations, 'end.tooltip'),
     value: date,
     dateFormat: DATE_TIME_FORMAT,
-    locale,
-    readOnly: true,
+    readOnly: false,
   };
 
   return (
@@ -35,9 +34,11 @@ const EndOnDate = ({
             key={`${id}-calendar`}
             {...calendarAttributes}
             onChange={(event) => {
+                const d = new Date(event);
+                const v = `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`;
               const editedEvent = {
                 target: {
-                  value: event.target.value,
+                  value: v,
                   name: 'end.onDate.date',
                 },
               };
@@ -55,6 +56,7 @@ const EndOnDate = ({
               }
             }
             locale={translateLabel(translations, 'locale')}
+            readOnly
             timeFormat={false}
             viewMode="days"
             closeOnSelect

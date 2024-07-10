@@ -52,7 +52,7 @@ const RepeatWeekly = ({
                 type="checkbox"
                 id={`${id}-${dayName}`}
                 name={`repeat.weekly.days[${dayName}]`}
-                className="btn-check"
+                className="btn btn-check d-none"
                 checked={isDayActive}
                 onChange={(event) => {
                   const editedEvent = {

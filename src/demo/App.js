@@ -77,7 +77,7 @@ class App extends Component {
         <div className="container">
           <h5><strong>Example handling</strong></h5>
 
-          <div className="px-3 pt-3 border rounded">
+          <div className="px-3 pt-3">
             <div className="form-group row m-2 d-flex align-items-sm-center">
 
               <div className="col-sm-2 text-sm-end">
@@ -118,7 +118,7 @@ class App extends Component {
 
         <div className="container mb-5">
           <h5><strong>Config</strong></h5>
-          <div className="px-3 pt-3 border rounded">
+          <div className="px-3 pt-3">
             <div className="form-group row m-2 d-flex align-items-sm-center">
               <div className="col-sm-2 text-sm-end">
                 <span className="col-form-label">
