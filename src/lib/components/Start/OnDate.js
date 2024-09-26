@@ -14,14 +14,15 @@ const StartOnDate = ({
     options,
   },
   handleChange,
-  translations
+  translations,
+  dateTimeFormat
 }) => {
   const CustomCalendar = options.calendarComponent;
   const locale = options.weekStartsOnSunday ? 'en-ca' : 'en-gb';
   const calendarAttributes = {
     'aria-label': translateLabel(translations, 'start.tooltip'),
     value: date,
-    dateFormat: DATE_TIME_FORMAT,
+    dateFormat: dateTimeFormat || DATE_TIME_FORMAT,
     locale,
     readOnly: true,
   };
@@ -86,6 +87,8 @@ StartOnDate.propTypes = {
   }).isRequired,
   handleChange: PropTypes.func.isRequired,
   translations: PropTypes.oneOfType([PropTypes.object, PropTypes.func]).isRequired,
+  // eslint-disable-next-line react/require-default-props
+  dateTimeFormat: PropTypes.string,
 };
 
 export default StartOnDate;

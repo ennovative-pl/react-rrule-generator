@@ -83,6 +83,7 @@ class ReactRRuleGenerator extends PureComponent {
                   start={start}
                   handleChange={this.handleChange}
                   translations={this.props.translations}
+                  dateFormat={this.props.dateFormat}
                 />
                 <hr />
               </div>
@@ -107,6 +108,8 @@ class ReactRRuleGenerator extends PureComponent {
                   end={end}
                   handleChange={this.handleChange}
                   translations={this.props.translations}
+                  dateFormat={this.props.dateFormat}
+                  withPortal={this.props.withPortal}
                 />
               </div>
             )
@@ -134,6 +137,8 @@ ReactRRuleGenerator.propTypes = {
   onChange: PropTypes.func,
   calendarComponent: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
   translations: PropTypes.oneOfType([PropTypes.object, PropTypes.func]),
+  dateFormat: PropTypes.string,
+  withPortal: PropTypes.bool,
 };
 ReactRRuleGenerator.defaultProps = {
   id: null,
@@ -142,6 +147,8 @@ ReactRRuleGenerator.defaultProps = {
   onChange() {},
   calendarComponent: null,
   translations: translations.english,
+  dateFormat: 'YYYY-MM-DD',
+  withPortal: false,
 };
 
 export default ReactRRuleGenerator;

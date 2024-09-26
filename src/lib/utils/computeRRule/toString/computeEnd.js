@@ -1,4 +1,5 @@
 import moment from 'moment';
+import formatDate from './formatDate';
 
 const computeEnd = ({ mode, after, onDate: { date } }) => {
   const end = {};
@@ -8,7 +9,7 @@ const computeEnd = ({ mode, after, onDate: { date } }) => {
   }
 
   if (mode === 'On date') {
-    end.until = moment.utc(date).format();
+    end.until = formatDate(moment.utc(date));
   }
 
   return end;

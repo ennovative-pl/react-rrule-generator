@@ -10,7 +10,8 @@ const Start = ({
     onDate,
   },
   handleChange,
-  translations
+  translations,
+  dateTimeFormat,
 }) => (
   <div className="px-3">
     <div className="form-group row m-2">
@@ -24,7 +25,7 @@ const Start = ({
           </strong>
         </label>
       </div>
-      <StartOnDate id={id} onDate={onDate} handleChange={handleChange} translations={translations} />
+      <StartOnDate id={id} onDate={onDate} handleChange={handleChange} translations={translations} dateTimeFormat={dateTimeFormat} />
     </div>
   </div>
 );
@@ -36,6 +37,8 @@ Start.propTypes = {
   }).isRequired,
   handleChange: PropTypes.func.isRequired,
   translations: PropTypes.oneOfType([PropTypes.object, PropTypes.func]).isRequired,
+  // eslint-disable-next-line react/require-default-props
+  dateTimeFormat: PropTypes.string,
 };
 
 export default Start;

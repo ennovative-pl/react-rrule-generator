@@ -4,6 +4,15 @@ import { isEmpty, uniqueId } from 'lodash';
 import computeRRuleToString from './computeRRule/toString/computeRRule';
 import { DATE_TIME_FORMAT } from '../constants/index';
 
+export const formatDate = (momentDate) => {
+  try {
+    return momentDate.format(DATE_TIME_FORMAT);
+  } catch (e) {
+    console.error(e);
+    return null;
+  }
+};
+
 const configureState = (config = {}, calendarComponent, id) => {
   const configureFrequency = () => (config.repeat ? config.repeat[0] : 'Yearly');
   const configureYearly = () => (config.yearly || 'on');
@@ -12,10 +21,11 @@ const configureState = (config = {}, calendarComponent, id) => {
   const configureHideStart = () => (typeof config.hideStart === 'undefined' ? true : config.hideStart);
   const uniqueRruleId = isEmpty(id) ? uniqueId('rrule-') : id;
 
+
   const data = {
     start: {
       onDate: {
-        date: moment().format(DATE_TIME_FORMAT),
+        date: formatDate(moment()),
         options: {
           weekStartsOnSunday: config.weekStartsOnSunday,
           calendarComponent,
@@ -82,7 +92,7 @@ const configureState = (config = {}, calendarComponent, id) => {
       mode: configureEnd(),
       after: 1,
       onDate: {
-        date: moment().format(DATE_TIME_FORMAT),
+        date: formatDate(moment()),
         options: {
           weekStartsOnSunday: config.weekStartsOnSunday,
           calendarComponent,
