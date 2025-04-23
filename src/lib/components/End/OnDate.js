@@ -16,17 +16,18 @@ const EndOnDate = ({
   handleChange,
   translations,
   dateTimeFormat,
-  withPortal,
 }) => {
   const CustomCalendar = options.calendarComponent;
 
   const locale = options.weekStartsOnSunday ? 'en-ca' : 'en-gb';
   const calendarAttributes = {
     'aria-label': translateLabel(translations, 'end.tooltip'),
-    value: date,
+    value: new Date(date),
     dateFormat: dateTimeFormat || DATE_TIME_FORMAT,
+    showTimeSelect: false,
     readOnly: false,
-    withPortal,
+    placement: 'bottom',
+    popoverPlacement: 'bottom',
   };
 
   return (
